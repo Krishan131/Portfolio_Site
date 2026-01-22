@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const Hero = () => {
   // Beginner Note: functional component usually starts with hooks or helper functions
@@ -9,6 +10,44 @@ const Hero = () => {
       // Smooth scrolling is a nice touch for user experience
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const TypingEffect = ({ text }: { text: string }) => {
+    const [displayText, setDisplayText] = useState('');
+    const [isDeleting, setIsDeleting] = useState(false);
+
+    useEffect(() => {
+      let timeoutId: NodeJS.Timeout;
+
+      const currentLength = displayText.length;
+      let typeSpeed = isDeleting ? 75 : 150;
+
+      if (!isDeleting && currentLength === text.length) {
+        // Finished typing, pause before deleting
+        typeSpeed = 2000;
+        timeoutId = setTimeout(() => setIsDeleting(true), typeSpeed);
+      } else if (isDeleting && currentLength === 0) {
+        // Finished deleting, pause before re-typing
+        typeSpeed = 1000;
+        timeoutId = setTimeout(() => setIsDeleting(false), typeSpeed);
+      } else {
+        // Typing or deleting
+        timeoutId = setTimeout(() => {
+          setDisplayText(prev =>
+            isDeleting ? prev.slice(0, -1) : text.slice(0, prev.length + 1)
+          );
+        }, typeSpeed);
+      }
+
+      return () => clearTimeout(timeoutId);
+    }, [displayText, isDeleting, text]);
+
+    return (
+      <span>
+        {displayText}
+        <span className="inline-block w-[3px] h-[1em] bg-primary ml-1 align-middle animate-pulse"></span>
+      </span>
+    );
   };
 
   return (
@@ -29,9 +68,9 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4"
+          className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 h-16 md:h-20 lg:h-24 flex items-center"
         >
-          Krishan Kumar Singh.
+          <TypingEffect text="Krishan Kumar Singh." />
         </motion.h1>
 
         <motion.h2
