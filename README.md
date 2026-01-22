@@ -1,73 +1,46 @@
-# Welcome to your Lovable project
+ #Portfolio Project
 
-## Project info
+Welcome! This project is built using **React**, a popular JavaScript library for building user interfaces.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+If you are new to React, this guide will help you understand how the code works.
 
-## How can I edit this code?
+## Project Structure
 
-There are several ways of editing your application.
+Here is a quick overview of the important folders:
 
-**Use Lovable**
+- **`src/`**: This is where all the source code lives.
+    - **`components/`**: Building blocks of the website (like buttons, navigation, specific sections).
+    - **`pages/`**: The main views of the application (e.g., the Home page, the NotFound page).
+    - **`hooks/`**: Custom logic that can be reused across different components (like the `use-toast` hook for notifications).
+    - **`App.tsx`**: The main entry point where we define the application's routes.
+    - **`main.tsx`**: The file that renders the React application into the HTML file.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Key Concepts Used
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### 1. Components
+React is all about components. A component is a function that returns HTML-like code (called JSX).
+Example:
+```tsx
+const Button = () => {
+  return <button>Click me</button>;
+}
 ```
 
-**Edit a file directly in GitHub**
+### 2. Props
+Props are like arguments to a function. They allow you to pass data from a parent component to a child component.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 3. Hooks
+Hooks allow you to "hook into" React features like state and lifecycle methods.
+- **`useState`**: Allows a component to remember information (like if a modal is open or closed).
+- **`useEffect`**: Lets you run code when something changes (like when the component first loads).
 
-**Use GitHub Codespaces**
+### 4. Routing
+We use `react-router-dom` to handle navigation between pages without reloading the browser. You can see this set up in `App.tsx`.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## How to Make Changes
 
-## What technologies are used for this project?
+1.  **Change the content**: Go to `src/components/About.tsx` or `Hero.tsx` and change the text.
+2.  **Change the styles**: This project uses **Tailwind CSS**, so you change styles by editing the `className` string.
+    - Example: `className="text-red-500"` makes the text red.
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Happy coding!
