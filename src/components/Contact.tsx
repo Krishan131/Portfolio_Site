@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Send, Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { Send, Github, Linkedin, Mail } from 'lucide-react';
 import { z } from 'zod';
 import { toast } from 'sonner';
 
@@ -11,10 +11,9 @@ const contactSchema = z.object({
 });
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com/alexchen', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://linkedin.com/in/alexchen', label: 'LinkedIn' },
-  { icon: Twitter, href: 'https://twitter.com/alexchen', label: 'Twitter' },
-  { icon: Mail, href: 'mailto:alex@email.com', label: 'Email' },
+  { icon: Github, href: 'https://github.com/Krishan131', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/krishan-kumar-singh-07352224a', label: 'LinkedIn' },
+  { icon: Mail, href: 'mailto:krishannn67@gmail.com', label: 'Email' },
 ];
 
 const Contact = () => {
@@ -53,13 +52,28 @@ const Contact = () => {
     }
 
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    toast.success('Message sent! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mjgyvkre", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        toast.success('Message sent! I\'ll get back to you soon.');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        toast.error('Something went wrong. Please try again later.');
+      }
+    } catch (error) {
+      toast.error('Failed to send message. Please check your internet connection.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -74,7 +88,7 @@ const Contact = () => {
         >
           <h2 className="section-heading inline-block">Get In Touch</h2>
           <p className="text-muted-foreground mt-4 max-w-lg mx-auto">
-            I'm currently looking for new opportunities. Whether you have a question, 
+            I'm currently looking for new opportunities. Whether you have a question,
             a project idea, or just want to say hi, I'll do my best to get back to you!
           </p>
         </motion.div>

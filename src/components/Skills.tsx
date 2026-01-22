@@ -4,23 +4,15 @@ import { useRef } from 'react';
 const skillCategories = [
   {
     title: 'Languages',
-    skills: ['JavaScript', 'TypeScript', 'Python', 'Java', 'Rust', 'C++', 'SQL'],
+    skills: ['Java', 'Python', 'C', 'JavaScript', 'HTML', 'CSS'],
   },
   {
-    title: 'Frontend',
-    skills: ['React', 'Next.js', 'Vue.js', 'Tailwind CSS', 'HTML/CSS', 'Framer Motion'],
+    title: 'Frameworks / Tools',
+    skills: ['Node.js', 'React.js', 'Tailwind CSS', 'Git'],
   },
   {
-    title: 'Backend',
-    skills: ['Node.js', 'Express', 'FastAPI', 'PostgreSQL', 'MongoDB', 'Redis', 'GraphQL'],
-  },
-  {
-    title: 'DevOps & Tools',
-    skills: ['Git', 'Docker', 'AWS', 'GitHub Actions', 'Linux', 'Vim', 'VS Code'],
-  },
-  {
-    title: 'Machine Learning',
-    skills: ['TensorFlow', 'PyTorch', 'scikit-learn', 'Pandas', 'NumPy', 'Jupyter'],
+    title: 'Databases',
+    skills: ['MySQL', 'MongoDB'],
   },
 ];
 

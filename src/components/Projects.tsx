@@ -4,50 +4,34 @@ import { Github, ExternalLink, Folder } from 'lucide-react';
 
 const projects = [
   {
-    title: 'CloudSync',
-    description: 'A real-time collaborative document editor with WebSocket synchronization, conflict resolution, and offline support. Built with a custom CRDT implementation.',
-    tech: ['React', 'Node.js', 'WebSocket', 'Redis', 'PostgreSQL'],
-    github: 'https://github.com/alexchen/cloudsync',
-    live: 'https://cloudsync.demo.com',
-    featured: true,
-  },
-  {
-    title: 'ML Image Classifier',
-    description: 'Deep learning model for classifying medical images with 94% accuracy. Includes a web interface for healthcare professionals to upload and analyze X-rays.',
-    tech: ['Python', 'TensorFlow', 'Flask', 'React', 'Docker'],
-    github: 'https://github.com/alexchen/ml-classifier',
+    title: 'LinkUp',
+    description: 'Activity first Social Platform with real-time chat and swiping features. Implemented secure authentication, dynamic dashboards, and user profiles.',
+    tech: ['React.js', 'Node.js', 'MongoDB', 'Socket.io'],
+    github: 'https://github.com/Krishan131',
     live: null,
     featured: true,
   },
   {
-    title: 'DevFlow CLI',
-    description: 'A command-line tool that automates common development workflows including Git operations, environment setup, and deployment pipelines.',
-    tech: ['Rust', 'Shell', 'GitHub Actions'],
-    github: 'https://github.com/alexchen/devflow',
+    title: 'MedX',
+    description: 'ERP & Retail Support System. Developed ERP modules for inventory, billing, and GST invoice generation. Integrated Google Authentication and automated WhatsApp invoice sharing.',
+    tech: ['React.js', 'Node.js', 'SQLite', 'Tailwind CSS'],
+    github: 'https://github.com/Krishan131',
     live: null,
     featured: true,
   },
   {
-    title: 'Budget Tracker',
-    description: 'Personal finance app with expense categorization, visual analytics, and budget alerts.',
-    tech: ['React Native', 'Firebase', 'Chart.js'],
-    github: 'https://github.com/alexchen/budget-tracker',
+    title: 'Meal Explorer',
+    description: 'Recipe Discovery App. Developed a dynamic SPA with country-based meal browsing and instant filtering. Implemented structured API fetching.',
+    tech: ['React.js', 'MealDB API'],
+    github: 'https://github.com/Krishan131',
     live: null,
-    featured: false,
+    featured: true,
   },
   {
-    title: 'Algorithm Visualizer',
-    description: 'Interactive visualizations for sorting, pathfinding, and graph algorithms for educational purposes.',
-    tech: ['TypeScript', 'Canvas API', 'React'],
-    github: 'https://github.com/alexchen/algo-viz',
-    live: 'https://algo-viz.demo.com',
-    featured: false,
-  },
-  {
-    title: 'Smart Home Hub',
-    description: 'IoT dashboard for controlling and monitoring smart home devices with voice commands.',
-    tech: ['Vue.js', 'Python', 'MQTT', 'Raspberry Pi'],
-    github: 'https://github.com/alexchen/smart-hub',
+    title: 'Upcoming Project',
+    description: 'Something exciting is being built! Stay tuned for updates on my latest full-stack application.',
+    tech: ['Next.js', 'PostgreSQL', 'Prisma'],
+    github: null,
     live: null,
     featured: false,
   },
@@ -138,15 +122,19 @@ const Projects = () => {
             ))}
           </div>
 
-          <h3 className="font-mono text-xl text-center text-foreground mb-8">
-            Other Noteworthy Projects
-          </h3>
+          {otherProjects.length > 0 && (
+            <>
+              <h3 className="font-mono text-xl text-center text-foreground mb-8">
+                More Projects in the Works...
+              </h3>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherProjects.map((project, index) => (
-              <FeaturedProject key={project.title} project={project} index={index} />
-            ))}
-          </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {otherProjects.map((project, index) => (
+                  <FeaturedProject key={project.title} project={project} index={index} />
+                ))}
+              </div>
+            </>
+          )}
         </motion.div>
       </div>
     </section>

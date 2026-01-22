@@ -2,20 +2,24 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
 
 const Hero = () => {
+  // Beginner Note: functional component usually starts with hooks or helper functions
   const scrollToProjects = () => {
     const element = document.querySelector('#projects');
     if (element) {
+      // Smooth scrolling is a nice touch for user experience
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
+    // "min-h-screen" makes this section take up at least the full height of the viewing window
     <section className="min-h-screen flex items-center justify-center relative px-6">
       <div className="container mx-auto max-w-4xl">
+        {/* Helper Note: 'motion.div' is from framer-motion library for animations */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0 }}      // Starting state
+          animate={{ opacity: 1 }}      // Ending state
+          transition={{ duration: 0.5 }} // How long the animation takes
           className="font-mono text-primary mb-4"
         >
           Hi, my name is
@@ -25,18 +29,18 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4"
+          className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4"
         >
-          Alex Chen.
+          Krishan Kumar Singh.
         </motion.h1>
 
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-3xl md:text-5xl lg:text-6xl font-bold text-muted-foreground mb-6"
+          className="text-2xl md:text-4xl lg:text-5xl font-bold text-muted-foreground mb-6"
         >
-          I build things for the web.
+          Full-stack developer.
         </motion.h2>
 
         <motion.p
@@ -45,26 +49,25 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-muted-foreground max-w-xl text-lg mb-8"
         >
-          I'm a Computer Science student passionate about creating elegant solutions 
-          to complex problems. Currently focused on{' '}
-          <span className="text-primary">full-stack development</span> and{' '}
-          <span className="text-primary">machine learning</span>.
+          Full-stack developer skilled in <span className="text-primary">Java, Node.js, React</span> and <span className="text-primary">MongoDB</span> with hands-on experience building real-world applications.
         </motion.p>
 
+        {/* Buttons section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="flex flex-wrap gap-4 mb-12"
         >
-          <button onClick={scrollToProjects} className="btn-primary">
-            View My Work
-          </button>
+          <a href="/Resume.pdf" target="_blank" className="btn-primary">
+            Download Resume
+          </a>
           <a href="#contact" className="btn-outline">
             Get In Touch
           </a>
         </motion.div>
 
+        {/* Social Links */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -72,7 +75,7 @@ const Hero = () => {
           className="flex gap-6"
         >
           <a
-            href="https://github.com/alexchen"
+            href="https://github.com/Krishan131"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors duration-200"
@@ -81,7 +84,7 @@ const Hero = () => {
             <Github size={24} />
           </a>
           <a
-            href="https://linkedin.com/in/alexchen"
+            href="https://www.linkedin.com/in/krishan-kumar-singh-07352224a"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors duration-200"
@@ -90,7 +93,7 @@ const Hero = () => {
             <Linkedin size={24} />
           </a>
           <a
-            href="mailto:alex@email.com"
+            href="mailto:krishannn67@gmail.com"
             className="text-muted-foreground hover:text-primary transition-colors duration-200"
             aria-label="Email"
           >
@@ -99,6 +102,7 @@ const Hero = () => {
         </motion.div>
       </div>
 
+      {/* Floating arrow animation at the bottom */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

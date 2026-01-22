@@ -3,40 +3,38 @@ import { useRef } from 'react';
 import { GraduationCap, Calendar, Award, BookOpen } from 'lucide-react';
 
 const educationData = {
-  university: 'Stanford University',
-  degree: 'B.S. Computer Science',
-  duration: '2022 - 2026 (Expected)',
-  gpa: '3.9/4.0',
+  university: 'UCER Prayagraj',
+  degree: 'B.Tech - Computer Science & Engineering',
+  duration: '2022 - Present',
+  gpa: '70%',
   relevantCourses: [
     'Data Structures & Algorithms',
-    'Machine Learning',
-    'Distributed Systems',
-    'Computer Networks',
-    'Database Systems',
+    'Database Management Systems',
+    'Object Oriented Programming',
     'Operating Systems',
-    'Software Engineering',
-    'Artificial Intelligence',
+    'Computer Networks',
+    'Web Technology',
   ],
   achievements: [
-    "Dean's List - All Quarters",
-    'CS Teaching Assistant',
-    'Hackathon Winner - TreeHacks 2024',
-    'Undergraduate Research Assistant',
+    'Top 10 finalist - UHACK 3.0 at UCER (2024)',
+    'Top 5 finalist - HackQuest at United University (2025)',
+    '4-star rating in Java & C - HackerRank',
+    'Web Design Certification - freecodecamp.org (2023)',
   ],
 };
 
 const experience = [
   {
-    company: 'Google',
-    role: 'Software Engineering Intern',
-    duration: 'Summer 2024',
-    description: 'Worked on the Cloud Platform team, improving infrastructure tooling and reducing deployment time by 40%.',
+    company: 'IBM',
+    role: 'Project-Based Experiential Learning Virtual Internship',
+    duration: '2025',
+    description: 'Completed a 60-hour virtual internship focused on Generative AI. Built a text-to-image application using Hugging Face + Stable Diffusion.',
   },
   {
-    company: 'Stripe',
-    role: 'Software Engineering Intern',
-    duration: 'Summer 2023',
-    description: 'Built developer tools for the API team, contributing to the Stripe CLI and SDK improvements.',
+    company: 'IIIT Allahabad',
+    role: 'Java Programming Summer Training',
+    duration: '2024',
+    description: 'Developed a Student Management System using Java + MySQL. Strengthened understanding of OOP and core concepts.',
   },
 ];
 
@@ -121,7 +119,7 @@ const Education = () => {
           </div>
 
           {/* Experience Timeline */}
-          <h3 className="font-mono text-xl text-foreground mb-6">Work Experience</h3>
+          <h3 className="font-mono text-xl text-foreground mb-6">Internship & Training</h3>
           <div className="space-y-6">
             {experience.map((exp, index) => (
               <motion.div

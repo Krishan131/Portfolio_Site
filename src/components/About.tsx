@@ -27,22 +27,16 @@ const About = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="md:col-span-2 space-y-4">
               <p className="text-muted-foreground leading-relaxed">
-                Hello! I'm Alex, a junior Computer Science student at{' '}
-                <span className="text-primary">Stanford University</span>. My journey into 
-                programming started in high school when I built my first game using Python, 
-                and I've been hooked ever since.
+                I am a Full-stack developer skilled in <span className="text-primary">Java, Node.js, React, and MongoDB</span> with
+                hands-on experience building real-world applications.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                I love turning complex problems into simple, beautiful, and intuitive solutions. 
-                When I'm not coding, you can find me contributing to open-source projects, 
-                participating in hackathons, or exploring new technologies.
+                I have strong fundamentals in <span className="text-primary">Object-Oriented Programming (OOP), backend logic, and authentication</span>.
+                I pride myself on my ability to learn fast, work under pressure, and deliver complete solutions end-to-end.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Currently, I'm focused on building accessible, human-centered products that 
-                make a difference. I've had the privilege of interning at{' '}
-                <span className="text-primary">Google</span> and{' '}
-                <span className="text-primary">Stripe</span>, where I worked on 
-                large-scale distributed systems and developer tools.
+                Currently, I'm focused on deepening my knowledge in full-stack development and exploring new technologies
+                to build efficient and scalable applications.
               </p>
             </div>
 
